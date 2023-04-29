@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Edit User</h1>
+    <form action="{% url 'updatedata' pk=student.pk %}" method="post">
+    {% csrf_token %}
+    <div class="box">
+    <div class="input">
+        <input type="text" name="name" value="{{ student.name }}" placeholder="Enter your name"/>
+    </div>
+    <div class="input">
+        <input type="email" name="email" value="{{ student.email }}" placeholder="Enter your email"/>
+    </div>
+    <div class="input">
+        <input type="password" name="password" value="{{ student.password }}" placeholder="Enter your password"/>
+    </div>
+    <div class="btn">
+        <button type="submit" role="submit">Update</button>
+    </div>
+    </div>
+    </form>
+{% endblock %}
+``
